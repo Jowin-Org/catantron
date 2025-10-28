@@ -21,6 +21,7 @@ from catanatron_experimental.machine_learning.players.minimax import (
     SameTurnAlphaBetaPlayer,
 )
 from catanatron_experimental.machine_learning.players.super_alpha import SuperAlphaPlayer
+from catanatron_experimental.machine_learning.players.super_alpha_v2 import SuperAlphaV2Player
 from catanatron.players.search import VictoryPointPlayer
 from catanatron_experimental.machine_learning.players.mcts import MCTSPlayer
 from catanatron_experimental.machine_learning.players.playouts import (
@@ -102,6 +103,13 @@ CLI_PLAYERS = [
         "Enhanced AlphaBeta with iterative deepening, opponent awareness, and strategic features. "
         + "Designed to beat the original AlphaBeta. Params are MAX_DEPTH (default 4), PRUNNING (default True)",
         SuperAlphaPlayer,
+    ),
+    CliPlayer(
+        "SA2",
+        "SuperAlphaV2Player",
+        "SuperAlpha v2 with game phase detection (early/mid/late) and adaptive weights. "
+        + "More robust and consistent than v1. Params are MAX_DEPTH (default 3), PRUNNING (default True)",
+        SuperAlphaV2Player,
     ),
 ]
 
